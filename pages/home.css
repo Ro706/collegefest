@@ -1,0 +1,354 @@
+/* General body styling */
+:root {
+    --background-color: #000000; /* Default background color */
+    --text-color: #969696; /* Default text color */
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Audiowide', sans-serif;
+    background-color: #000000;  /* Light background */
+    color: var(--text-color);
+    text-align: center;
+}
+p {
+    padding: 10px;
+    color: var(--text-color);
+    font-size: 20px;
+    text-align: left;
+}
+.video {
+    position: relative;
+    width: 100%;  /* Makes the video container take up the full width */
+    height: auto;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.video video {
+    width: 100%;  /* Makes the video take up the full width of its container */
+    height: 100%;  /* Makes the video height responsive, maintaining aspect ratio */
+    object-fit: cover;  /* Ensures the video covers the container, cropping if necessary */
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333;  /* Dark background for the navbar */
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Gallery Items */
+.gallery div {
+    overflow: hidden;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Gallery Images */
+.gallery-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease, filter 0.3s ease;
+}
+
+.gallery div:hover .gallery-img {
+    transform: scale(1.1);
+    filter: brightness(0.8);
+}
+nav .logo {
+    padding-left: 20px;
+}
+
+#navbar-logo {
+    width: 140px; /* Adjust the logo size */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;  /* Darker background on hover */
+}
+
+/* Username display */
+#username-display {
+    color: white;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Home page content */
+h1 {
+    margin-top: 100px;  /* Adds space below the fixed navbar */
+    font-size: 36px;
+    color: #969696;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Logout button style */
+#logout {
+    color: white;
+    text-decoration: none;
+    background-color: #ff4d4d;  /* Red background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#logout:hover {
+    background-color: #ff1a1a;  /* Darker red on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    /* Navbar */
+    nav ul {
+        flex-direction: column;
+        display: none;  /* Hide the menu by default */
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        left: 0;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Show the menu when toggled */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Hamburger button styling */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: 20px;
+    }
+
+    .hamburger div {
+        background-color: white;
+        width: 30px;
+        height: 4px;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Username display */
+    #username-display {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #logout {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+
+    #navbar-logo {
+        width: 100px; /* Adjust the logo size */
+        height: auto;
+    }
+}
+
+/* Event Card Styles */
+.event-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 40px 0;
+}
+
+.card {
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    max-width: 1000px;
+    width: 100%;
+    background-color: #050505;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); /* Slight zoom effect on hover */
+}
+
+.card img {
+    width: 40%;
+    height: auto;
+    object-fit: cover;
+    border-right: 2px solid #ddd;
+}
+
+.card-content {
+    padding: 20px;
+    width: 60%;
+}
+
+.event-title {
+    font-size: 1.8rem;
+    font-family: 'Audiowide', sans-serif;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.event-description {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.read-more,
+.apply-now {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.read-more {
+    color: #007bff;
+    font-weight: bold;
+    cursor: pointer;
+    display: inline-block;
+}
+
+.read-more:hover {
+    text-decoration: underline;
+}
+
+.apply-now {
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    margin-left: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.apply-now:hover {
+    background-color: #218838;
+}
+
+/* Initially hide the "Read More" section */
+.read-more-content {
+    display: none;
+}
+
+/* Toggle the visibility of Read More content */
+.read-more.active + .read-more-content {
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .card {
+        flex-direction: column;
+    }
+
+    .card img {
+        width: 100%;
+        height: auto;
+    }
+
+    .card-content {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .event-title {
+        font-size: 1.6rem;
+    }
+
+    .event-description {
+        font-size: 0.95rem;
+    }
+
+    .read-more,
+    .apply-now {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer Styling */
+/* Footer Section */
+footer {
+    background-color: #000000; /* Dark background for the footer */
+    color: var(--text-color); /* White text color */
+    text-align: center; /* Center-align the text */
+    padding: 20px 0; /* Add padding around the footer */
+    font-size: 14px; /* Set font size */
+}
+
+footer p {
+    margin: 0; /* Remove margin */
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+}

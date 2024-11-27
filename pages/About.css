@@ -1,0 +1,256 @@
+/* General body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Audiowide', sans-serif;
+    background-color: #000000;  /* Light background */
+    color: #ffffff;
+    text-align: center;
+}
+/* Footer Styling */
+footer {
+    background-color: #000000; /* Dark background for the footer */
+    color: var(--text-color); /* White text color */
+    text-align: center; /* Center-align the text */
+    padding: 20px 0; /* Add padding around the footer */
+    font-size: 14px; /* Set font size */
+}
+
+footer p {
+    margin: 0; /* Remove margin */
+}
+/* About Page Styles */
+body {
+    font-family: 'Audiowide', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+h1, h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+p {
+    line-height: 1.6;
+    margin: 0 20px;
+    text-align: justify;
+}
+
+/* About Section */
+#about-college {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Sponsor Card Section */
+#sponsors {
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.sponsor-card {
+    background-color: #fff;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+.video {
+    position: relative;
+    width: 100%;  /* The video container takes the full width of its parent */
+    padding-top: 56.25%; /* Aspect ratio for 16:9 (height is 56.25% of the width) */
+    overflow: hidden;  /* Ensures content doesn't spill outside the container */
+    background-color: #000; /* Fallback background color */
+}
+
+.video video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  /* Video will scale to fit the width of the container */
+    height: 100%; /* Ensures the video fills the container maintaining aspect ratio */
+    object-fit: cover;  /* Crops and centers the video if necessary */
+}
+
+.sponsor-logo {
+    max-width: 100px;
+    margin-bottom: 15px;
+}
+
+.sponsor-card h3 {
+    margin-bottom: 10px;
+    color: #444;
+}
+
+.sponsor-card p {
+    margin: 0;
+    font-size: 14px;
+    color: #555;
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 10px;
+        font-size: 14px;
+    }
+    .video {
+        padding-top: 106.25%; /* Aspect ratio for 16:9 (height is 56.25% of the width) */
+    }
+}
+
+/* Navbar styling */
+nav {
+    background-color: #333;  /* Dark background for the navbar */
+    color: white;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav .logo {
+    padding-left: 20px;
+}
+
+#navbar-logo {
+    width: 140px; /* Adjust the logo size */
+    height: auto;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 0 20px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 15px;
+    display: block;
+    text-align: center;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #575757;  /* Darker background on hover */
+}
+
+/* Username display */
+#username-display {
+    color: white;
+    font-size: 18px;
+    margin-left: auto;
+    margin-right: 20px;
+    display: inline-block;
+    font-weight: bold;
+}
+
+/* Home page content */
+h1 {
+    margin-top: 100px;  /* Adds space below the fixed navbar */
+    font-size: 36px;
+    color: #333;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Logout button style */
+#logout {
+    color: white;
+    text-decoration: none;
+    background-color: #ff4d4d;  /* Red background */
+    padding: 10px 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+#logout:hover {
+    background-color: #ff1a1a;  /* Darker red on hover */
+}
+
+/* Responsive Design for smaller screens */
+@media (max-width: 768px) {
+    /* Navbar */
+    nav ul {
+        flex-direction: column;
+        display: none;  /* Hide the menu by default */
+        text-align: center;
+        background-color: #333;
+        position: absolute;
+        top: 50px;
+        width: 100%;
+        left: 0;
+        padding: 0;
+        z-index: 1000;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    /* Show the menu when toggled */
+    nav ul.active {
+        display: flex;
+    }
+
+    /* Hamburger button styling */
+    .hamburger {
+        display: block;
+        cursor: pointer;
+        padding: 10px;
+        margin-right: 20px;
+    }
+
+    .hamburger div {
+        background-color: white;
+        width: 30px;
+        height: 4px;
+        margin: 6px 0;
+        transition: 0.4s;
+    }
+
+    /* Username display */
+    #username-display {
+        margin-left: 0;
+        margin-bottom: 10px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+
+    #logout {
+        margin-left: 0;
+        margin-top: 10px;
+    }
+    #navbar-logo {
+        width: 100px; /* Adjust the logo size */
+        height: auto;
+    }
+}

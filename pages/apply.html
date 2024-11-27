@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="apply.css">
+    <title>Apply page</title>
+</head>
+<body>
+    <nav>
+        <!-- Logo/Image in the navbar -->
+        <div class="logo">
+            <a href="home.html">
+                <img src="./assents/sitlogo.png" alt="Logo" id="navbar-logo">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="username-display"></li>
+            <li><a href="../index.html" id="logout">Logout</a></li>
+        </ul>
+
+        <!-- Hamburger menu icon -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <script>
+        // Check if the user is logged in
+        var username = sessionStorage.getItem("username");
+
+        // If no username in session storage, redirect to login page
+        if (!username) {
+            window.location.assign("../index.html");
+        } else {
+            document.getElementById("username-display").innerText = `Welcome, ${username}`;
+        }
+
+        // Handle logout
+        document.getElementById("logout").addEventListener("click", function() {
+            alert(`You have been logged out successfully, ${username}`);
+            sessionStorage.removeItem("username"); // Remove session data
+            sessionStorage.removeItem("password");
+            sessionStorage.removeItem("email");
+        });
+
+        // Function to update the cost based on event name
+        function updateCost() {
+            const eventSelect = document.getElementById("event-name");
+            const costInput = document.getElementById("event-cost");
+            const selectedEvent = eventSelect.value;
+            let cost = 0;
+
+            if (selectedEvent === "SynergiaX") {
+            cost = 600;
+        } else if (selectedEvent === "CodeHunt") {
+            cost = 500;
+        } else if (selectedEvent === "CompiKode") {
+            cost = 300;
+        } else if (selectedEvent === "Symbi-Tank") {
+            cost = 500;
+        } else if (selectedEvent === "Tech-Talk") {
+            cost = 500;
+        }
+
+
+            costInput.value = cost; // Set the event cost based on selection
+        }
+    </script>
+
+    <div class="apply-form-container">
+        <h2>Apply for an Event</h2>
+        <form id="apply-form">
+            <!-- Name Field -->
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email Field -->
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <!-- Event Name Field -->
+            <label for="event-name">Event Name:</label>
+            <select id="event-name" name="event-name" required onchange="updateCost()">
+                <option value="SynergiaX">SynergiaX</option>
+                <option value="CodeHunt">CodeHunt</option>
+                <option value="CompiKode">CompiKode</option>
+                <option value="Symbi-Tank">Symbi-Tank</option>
+                <option value="Tech-Talk">Tech-Talk</option>
+            </select>
+
+            <!-- Event Cost Field (Read-only) -->
+            <label for="event-cost">Event Cost (₹):</label>
+            <input type="number" id="event-cost" name="event-cost" value="1000" readonly>
+
+            <!-- Submit Button -->
+            <button type="submit">Submit Application</button>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Symbiosis Institute of Technology</p>
+    </footer>
+</body>
+</html>

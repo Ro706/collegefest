@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="./pages/assents/logo.png" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Login</title>
+</head>
+<body>
+    <img src="./pages/assents/sitlogo.png" alt="Error loading image">
+    <form id="loginForm">
+        <h1>Login</h1>
+        <input type="text" placeholder="Username" id="username" required><br>
+        <input type="password" placeholder="Password" id="password" required><br>
+        <input type="submit" value="Login" id="submit">
+        
+        <div class="extra-options">
+            <a href="register.html" id="registerLink">Not registered? Sign up</a><br>
+        </div>
+    </form>
+    
+    <script>
+        const username = document.getElementById("username"),
+              password = document.getElementById("password"),
+              form = document.getElementById("loginForm");
+
+        function login(event) {
+            event.preventDefault();
+
+            // Default credentials
+            const defaultUsername = "admin";
+            const defaultPassword = "admin";
+
+            // Get stored session values
+            let storedUsername = sessionStorage.getItem("username");
+            let storedPassword = sessionStorage.getItem("password");
+
+            // If no stored username and password, set the default credentials in sessionStorage
+            if (!storedUsername || !storedPassword) {
+                storedUsername = defaultUsername;
+                storedPassword = defaultPassword;
+                sessionStorage.setItem("username", storedUsername);
+                sessionStorage.setItem("password", storedPassword);
+            }
+
+            // If the entered username and password are empty, use the default credentials
+            const inputUsername = username.value.trim() || storedUsername;
+            const inputPassword = password.value.trim() || storedPassword;
+
+            // Check if the entered credentials match the stored credentials
+            if (!inputUsername || !inputPassword) {
+                alert("Both fields are mandatory");
+                return;
+            }
+
+            if (inputUsername === storedUsername && inputPassword === storedPassword) {
+                window.alert("Login Successful");
+                window.location.assign("./pages/home.html"); // Redirect to home page
+            } else {
+                alert("Invalid Username or Password");
+            }
+        }
+
+        form.addEventListener("submit", login);
+    </script>
+</body>
+</html>

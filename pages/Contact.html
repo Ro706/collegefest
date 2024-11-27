@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Contact.css">
+    <title>Home Page</title>
+</head>
+<body>
+    <nav>
+        <!-- Logo/Image in the navbar -->
+        <div class="logo">
+            <a href="home.html">
+                <img src="./assents/sitlogo.png" alt="Logo" id="navbar-logo">
+            </a>
+        </div>
+
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
+            <li><a href="profile.html">Profile</a></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li id="username-display"></li>
+            <li><a href="../index.html" id="logout">Logout</a></li>
+        </ul>
+
+        <!-- Hamburger menu icon -->
+        <div class="hamburger" id="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="contact-form">
+            <h1>Contact Us</h1>
+            <form action="#" method="POST">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+                <label for="message">Your Message</label>
+                <textarea id="message" name="message" rows="5" placeholder="Write your message here" required></textarea>
+
+                <button type="submit" id="submit-btn">Submit</button>
+            </form>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2025 Symbiosis Institute of Technology</p>
+    </footer>
+    <script>
+        // Check if the user is logged in
+        var username = sessionStorage.getItem("username");
+
+        // If no username in session storage, redirect to login page
+        if (!username) {
+            window.location.assign("../index.html");
+        } else {
+            document.getElementById("username-display").innerText = `Welcome, ${username}`;
+        }
+
+        // Handle logout
+        document.getElementById("logout").addEventListener("click", function() {
+            alert(`You have been logged out successfully, ${username}`);
+            sessionStorage.removeItem("username"); // Remove session data
+            sessionStorage.removeItem("password");
+            sessionStorage.removeItem("email");
+        });
+
+        // Hamburger menu toggle
+        document.getElementById("hamburger").addEventListener("click", function() {
+            var navMenu = document.querySelector("nav ul");
+            navMenu.classList.toggle("active"); // Toggle 'active' class to show/hide the menu
+        });
+    </script>
+</body>
+</html>

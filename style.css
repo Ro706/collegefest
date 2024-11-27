@@ -1,0 +1,84 @@
+/* Body styling */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Audiowide', sans-serif;
+    text-align: center;
+    background-color: black;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Image styling */
+img {
+    width: 200px;
+    margin-bottom: 20px;
+}
+
+/* Heading styling */
+h1 {
+    margin-bottom: 20px;
+}
+
+/* Form container */
+form {
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Input fields */
+input[type="text"], input[type="password"] {
+    text-align: center;
+    width: 100%;
+    height: 30px;
+    padding: 5px;
+    font-size: x-large;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+}
+
+/* Submit button */
+input[type="submit"] {
+    font-size: 20px;
+    width: 100%;
+    height: 56px;
+    margin: 10px 0;
+    border-radius: 8px;
+    background-color: blue;
+    color: white;
+    border: none;
+    box-shadow: none;
+}
+
+/* Hover effect for submit button */
+input[type="submit"]:hover {
+    cursor: pointer;
+    background-color: darkblue;
+}
+
+/* Extra options styling */
+.extra-options {
+    margin-top: 15px;
+}
+
+.extra-options a {
+    font-size: 14px;
+    color: lightgray;
+    text-decoration: none;
+    display: block;
+    margin-top: 5px;
+}
+
+.extra-options a:hover {
+    color: white;
+}
