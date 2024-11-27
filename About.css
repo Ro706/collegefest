@@ -23,11 +23,12 @@ footer p {
 
 h1, h2 {
     text-align: center;
-    color: #222;
+    color: #ffffff;
     margin-bottom: 20px;
 }
 
 p {
+    color:#959595;
     line-height: 1.6;
     margin: 0 20px;
     text-align: justify;
@@ -35,7 +36,7 @@ p {
 
 /* About Section */
 #about-college {
-    background-color: #fff;
+    background-color: #000000;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
@@ -49,11 +50,12 @@ p {
 }
 
 .sponsor-card {
-    background-color: #fff;
+    background-color: #000000;
+    color:#b4b4b4;
     margin: 20px auto;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
     text-align: center;
 }
 .video {
