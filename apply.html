@@ -5,28 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="apply.css">
-    <title>Apply page</title>
+    <title>Apply Page</title>
 </head>
 <body>
     <nav>
         <!-- Logo/Image in the navbar -->
         <div class="logo">
-            <a href="home.html">
+            <a href="index.html">
                 <img src="./assents/sitlogo.png" alt="Logo" id="navbar-logo">
             </a>
         </div>
 
         <ul>
-            <li><a href="./home.html">Home</a></li>
-            <li><a href="./About.html">About</a></li>
-            <li><a href="./Contact.html">Contact</a></li>
-            <li><a href="./profile.html">Profile</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="About.html">About</a></li>
+            <li><a href="Contact.html">Contact</a></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
-            <li id="username-display"></li>
-            <li><a href="../index.html" id="logout">Logout</a></li>
         </ul>
 
         <!-- Hamburger menu icon -->
@@ -36,7 +33,6 @@
             <div></div>
         </div>
     </nav>
-
     <script>
         // Check if the user is logged in
         var username = sessionStorage.getItem("username");
@@ -68,7 +64,7 @@
         } else if (selectedEvent === "CodeHunt") {
             cost = 500;
         } else if (selectedEvent === "CompiKode") {
-            cost = 300;
+            cost = 350;
         } else if (selectedEvent === "Symbi-Tank") {
             cost = 500;
         } else if (selectedEvent === "Tech-Talk") {
@@ -103,7 +99,7 @@
 
             <!-- Event Cost Field (Read-only) -->
             <label for="event-cost">Event Cost (₹):</label>
-            <input type="number" id="event-cost" name="event-cost" value="1000" readonly>
+            <input type="number" id="event-cost" name="event-cost" value="600" readonly>
 
             <!-- Submit Button -->
             <button type="submit">Submit Application</button>

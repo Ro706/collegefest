@@ -123,7 +123,7 @@ nav ul li a:hover {
 h1 {
     margin-top: 100px;  /* Adds space below the fixed navbar */
     font-size: 36px;
-    color: #969696;
+    color: #ffffff;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -224,6 +224,7 @@ h1 {
     overflow: hidden;
     max-width: 1000px;
     width: 100%;
+    color:#fff;
     background-color: #050505;
     transition: transform 0.3s ease;
 }
@@ -247,13 +248,13 @@ h1 {
 .event-title {
     font-size: 1.8rem;
     font-family: 'Audiowide', sans-serif;
-    color: #333;
+    color: #cbcbcb;
     margin-bottom: 10px;
 }
 
 .event-description {
     font-size: 1rem;
-    color: #555;
+    color: #b3b1b1;
     line-height: 1.5;
     margin-bottom: 20px;
 }

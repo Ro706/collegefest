@@ -5,28 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Dancing+Script:wght@400..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="Contact.css">
-    <title>Home Page</title>
+    <title>Contact Page</title>
 </head>
 <body>
     <nav>
         <!-- Logo/Image in the navbar -->
         <div class="logo">
-            <a href="home.html">
+            <a href="index.html">
                 <img src="./assents/sitlogo.png" alt="Logo" id="navbar-logo">
             </a>
         </div>
 
         <ul>
-            <li><a href="home.html">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="About.html">About</a></li>
             <li><a href="Contact.html">Contact</a></li>
-            <li><a href="profile.html">Profile</a></li>
             <li></li>
             <li></li>
             <li></li>
             <li></li>
-            <li id="username-display"></li>
-            <li><a href="../index.html" id="logout">Logout</a></li>
         </ul>
 
         <!-- Hamburger menu icon -->
@@ -58,24 +55,6 @@
         <p>&copy; 2025 Symbiosis Institute of Technology</p>
     </footer>
     <script>
-        // Check if the user is logged in
-        var username = sessionStorage.getItem("username");
-
-        // If no username in session storage, redirect to login page
-        if (!username) {
-            window.location.assign("../index.html");
-        } else {
-            document.getElementById("username-display").innerText = `Welcome, ${username}`;
-        }
-
-        // Handle logout
-        document.getElementById("logout").addEventListener("click", function() {
-            alert(`You have been logged out successfully, ${username}`);
-            sessionStorage.removeItem("username"); // Remove session data
-            sessionStorage.removeItem("password");
-            sessionStorage.removeItem("email");
-        });
-
         // Hamburger menu toggle
         document.getElementById("hamburger").addEventListener("click", function() {
             var navMenu = document.querySelector("nav ul");
