@@ -34,24 +34,6 @@
         </div>
     </nav>
     <script>
-        // Check if the user is logged in
-        var username = sessionStorage.getItem("username");
-
-        // If no username in session storage, redirect to login page
-        if (!username) {
-            window.location.assign("../index.html");
-        } else {
-            document.getElementById("username-display").innerText = `Welcome, ${username}`;
-        }
-
-        // Handle logout
-        document.getElementById("logout").addEventListener("click", function() {
-            alert(`You have been logged out successfully, ${username}`);
-            sessionStorage.removeItem("username"); // Remove session data
-            sessionStorage.removeItem("password");
-            sessionStorage.removeItem("email");
-        });
-
         // Function to update the cost based on event name
         function updateCost() {
             const eventSelect = document.getElementById("event-name");
