@@ -137,22 +137,6 @@ h1 {
     letter-spacing: 2px;
 }
 
-/* Logout button style */
-#logout {
-    color: white;
-    text-decoration: none;
-    background-color: #ff4d4d;  /* Red background */
-    padding: 10px 20px;
-    border-radius: 5px;
-    margin-left: 20px;
-    font-size: 18px;
-    transition: background-color 0.3s;
-}
-
-#logout:hover {
-    background-color: #ff1a1a;  /* Darker red on hover */
-}
-
 /* Responsive Design for smaller screens */
 @media (max-width: 768px) {
     /* Navbar */
@@ -364,3 +348,20 @@ footer p {
         font-size: 12px;
     }
 }
+.container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+  }
+  
+  .responsive-iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+  }
