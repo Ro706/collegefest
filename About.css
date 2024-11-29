@@ -9,6 +9,9 @@ body {
 }
 /* Footer Styling */
 footer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
     background-color: #000000; /* Dark background for the footer */
     color: var(--text-color); /* White text color */
     text-align: center; /* Center-align the text */
@@ -17,7 +20,16 @@ footer {
 }
 
 footer p {
+    text-align: center;
     margin: 0; /* Remove margin */
+}
+
+/* Responsive Footer */
+@media (max-width: 768px) {
+    footer {
+        padding: 15px 10px;
+        font-size: 12px;
+    }
 }
 /* About Page Styles */
 
@@ -91,12 +103,7 @@ p {
     color: #555;
 }
 
-/* Responsive Footer */
 @media (max-width: 768px) {
-    footer {
-        padding: 15px 10px;
-        font-size: 14px;
-    }
     .video {
         padding-top: 106.25%; /* Aspect ratio for 16:9 (height is 56.25% of the width) */
     }

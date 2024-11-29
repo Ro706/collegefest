@@ -342,6 +342,9 @@ h1 {
 
 /* Footer Styling */
 footer {
+    display: flex;
+    justify-content: center; /* Centers horizontally */
+    align-items: center;    /* Centers vertically */
     background-color: #000000; /* Dark background for the footer */
     color: var(--text-color); /* White text color */
     text-align: center; /* Center-align the text */
@@ -350,6 +353,7 @@ footer {
 }
 
 footer p {
+    text-align: center;
     margin: 0; /* Remove margin */
 }
 
@@ -357,6 +361,6 @@ footer p {
 @media (max-width: 768px) {
     footer {
         padding: 15px 10px;
-        font-size: 14px;
+        font-size: 12px;
     }
 }
