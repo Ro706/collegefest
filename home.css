@@ -12,6 +12,13 @@ body {
     text-align: center;
     overflow-x: hidden;  /* Prevent horizontal scroll */
 }
+.event-date {
+    /* existing styles */
+    color: #969696;
+    font-size: 1rem;
+    margin-bottom: 10px;
+    text-align: center;
+}
 p {
     padding: 10px;
     color: var(--text-color);
